@@ -6,7 +6,7 @@ const setupMetricModel = require('./models/metric')
 const defaults = require('defaults')
 const setupAgent = require('./lib/agent')
 const setupMetric = require('./lib/metric')
-
+//git ignore
 module.exports = async function (config) {
   config = defaults(config, {
     dialect: 'sqlite',
