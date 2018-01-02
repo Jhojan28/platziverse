@@ -7,7 +7,25 @@ const db = require('./')
 
 const prompt = inquirer.createPromptModule()
 async function setup () {
-  let answer = await prompt([
+  if(process.argv.pop() === '--y'){
+    const config = {
+      database: process.env.DB_NAME || 'platziverse',
+      username: process.env.DB_USER || 'platzi',
+      password: process.env.DB_PWD || 'platzi',
+      host: process.env.DB_HOST || 'localhost',
+      dialect: 'postgres',
+      logging: s => debug(s),
+      setup: true
+    }
+  
+    await db(config).catch(handleFatalError)
+  
+    console.log('success: ')
+    process.exit(0)
+  }else{
+    console.log('Nothing happened')
+  }
+  /*let answer = await prompt([
     {
       type: 'confirm',
       name: 'setup',
@@ -17,21 +35,7 @@ async function setup () {
 
   if (!answer.setup) {
     return console.log('Nothing happened')
-  }
-  const config = {
-    database: process.env.DB_NAME || 'platziverse',
-    username: process.env.DB_USER || 'platzi',
-    password: process.env.DB_PWD || 'platzi',
-    host: process.env.DB_HOST || 'localhost',
-    dialect: 'postgres',
-    logging: s => debug(s),
-    setup: true
-  }
-
-  await db(config).catch(handleFatalError)
-
-  console.log('success: ')
-  process.exit(0)
+  }*/
 }
 
 function handleFatalError (error) {
