@@ -1,0 +1,21 @@
+{
+  "name": "platziverse-cli",
+  "version": "1.0.0",
+  "private": true,
+  "description": "a simple IoT platform - cli",
+  "bin": "platziverse",
+  "main": "index.js",
+  "scripts": {
+    "lint": "standard"
+  },
+  "author": "Jhojan Garcia",
+  "license": "MIT",
+  "devDependencies": {
+    "standard": "^10.0.3"
+  },
+  "dependencies": {
+    "blessed": "^0.1.81",
+    "blessed-contrib": "^4.8.5",
+    "minimist": "^1.2.0"
+  }
+}
