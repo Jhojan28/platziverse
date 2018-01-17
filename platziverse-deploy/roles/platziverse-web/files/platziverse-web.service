@@ -1,0 +1,17 @@
+[Unit]
+Description=Plativerse Web
+After=network.target
+
+[Service]
+Environment=NODE_ENV=production
+Environment=API_ENDPOINT=http://165.227.78.33
+Environment=SERVER_HOST=http://138.197.42.46
+Environment=MQTT_HOST=mqtt://165.227.78.33
+Type=simple
+User=root
+WorkingDirectory=/usr/local/src/platziverse-web
+ExecStart=/usr/bin/npm start
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

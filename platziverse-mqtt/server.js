@@ -54,11 +54,11 @@ server.on('clientDisconnected', async client => {
     clients.delete(client.id)
     server.publish({
       topic: 'agent/disconnected',
-      payload: {
+      payload: JSON.stringify({
         agent: {
           uuid: agent.uuid
         }
-      }
+      })
     })
     debug(`Cliente (${client.id}) assosiated to Agent (${agent.uuid}) marked as disconnected`)
   }

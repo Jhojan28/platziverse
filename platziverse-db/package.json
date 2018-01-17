@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "standard",
-    "setup": "DEBUG=platziverse:* node setup.js",
+    "setup": "DEBUG=platziverse:* node setup.js --yes",
+    "start": "node setup --yes",
     "test": "DEBUG=platziverse:* nyc --reporter=lcov ava tests/ --verbose"
   },
   "author": "Jhojan Garcia",

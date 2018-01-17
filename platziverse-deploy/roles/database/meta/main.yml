@@ -1,4 +1,4 @@
 ---
 dependencies:
-  - { role: ANSX.postgresql }
+  - { role: ANXS.postgresql }
   - { role: geerlingguy.redis }
